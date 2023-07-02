@@ -1,30 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { INavBarProps } from './INavBarProps';
 import { Menubar } from 'primereact/menubar';
 import { MenuItems } from '@/constants/MenuItems';
-import { useNavigate } from 'react-router-dom';
 import './style.scss';
+import useMenuItems from '@/services/Hooks/useMenuItems';
 
 import Logo from '@/components/Logo';
 
 const NavBar: React.FunctionComponent<INavBarProps> = () => {
-
-  const navigator = useNavigate();
+  useMenuItems();
 
   const image = <Logo className='menu-logo' size="small" />
-
-  useEffect(() => {
-    const handleClick = (e: any) => {
-      const path = e?.detail?.path ?? '/not-found';
-      navigator(path)
-    };
-
-    window.addEventListener('handleMenuItemClick', handleClick);
-
-    return () => {
-      window.removeEventListener('handleMenuItemClick', handleClick);
-    };
-  }, []);
 
   return (
     <Menubar model={MenuItems} start={image} className='menubar-desktop' />
