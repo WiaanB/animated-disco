@@ -3,6 +3,7 @@ import { INavBarProps } from './INavBarProps';
 import { Menubar } from 'primereact/menubar';
 import { MenuItems } from '@/constants/MenuItems';
 import { useNavigate } from 'react-router-dom';
+import './style.scss';
 
 import Logo from '@/components/Logo';
 
