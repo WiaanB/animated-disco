@@ -10,7 +10,7 @@ import Logo from '@/components/Logo';
 const NavBar: React.FunctionComponent<INavBarProps> = () => {
   useMenuItems();
 
-  const image = <Logo className='menu-logo' size="small" />
+  const image = <Logo size="small" appName={true} />
 
   return (
     <Menubar model={MenuItems} start={image} className='menubar-desktop' />

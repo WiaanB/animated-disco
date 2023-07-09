@@ -1,11 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './style.scss'
 
 import ILogoProps from './ILogoProps.ts';
 
 const Logo: React.FunctionComponent<ILogoProps> = props => {
 
-    let navigate = useNavigate();
+    const navigate = useNavigate();
 
     const imageSrc = '/assets/nail_dark.svg';
     let width = '50px';
@@ -23,7 +24,10 @@ const Logo: React.FunctionComponent<ILogoProps> = props => {
     }
 
     return (
-        <img className={props.className} src={imageSrc} alt='Nailed Icon' width={width} onClick={() => navigate('/')} />
+        <div className='logo-container' onClick={() => navigate('/')}>
+            <img className={props.className} src={imageSrc} alt='Nailed Icon' width={width} />
+            {props.appName ? <h3 className='logo-text'>Nail'd</h3> : null}
+        </div>
     )
 }
 

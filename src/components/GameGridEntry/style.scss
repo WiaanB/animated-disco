@@ -1,0 +1,25 @@
+.gameGridEntry {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Elements in the accordion */
+    align-items: start;
+    justify-content: space-between;
+
+    .p-knob {
+        opacity: 1;
+    }
+
+    .biggest-loser, .game-progress, .player-table {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .biggest-loser {
+        text-align: justify;
+    }
+
+    .leave-button {
+        grid-column: 3;
+    }
+}
